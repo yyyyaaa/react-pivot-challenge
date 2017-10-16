@@ -15,41 +15,28 @@ module.exports = createReactClass({
       memo.impressions = (memo.impressions || 0) + (row.type === "impression" ? 1 : 0);
       memo.loads = (memo.loads || 0) + (row.type === "load" ? 1 : 0);
       memo.displays = (memo.displays || 0) + (row.type === "display" ? 1 : 0);
-      memo.loadRate = parseFloat((memo.loads / memo.impressions) * 100).toFixed(1);
-      memo.displayRate = parseFloat((memo.displays / memo.loads) * 100).toFixed(1);
+      memo.loadRate = (memo.loads / memo.impressions) * 100;
+      memo.displayRate = (memo.displays / memo.loads) * 100;
       return memo;
     };
 
     var calculations = [
       {
         title: 'Impressions', value: 'impressions',
-        template: function(val, row) {
-          return val;
-        }
       },
       {
         title: 'Loads', value: 'loads',
-        template: function(val, row) {
-          return val;
-        }
       },
       {
         title: 'Displays', value: 'displays',
-        template: function(val, row) {
-          return val;
-        }
       }, 
       {
         title: 'Load Rate', value: 'loadRate',
-        template: function(val, row) {
-          return String(val) + "%";
-        }
+        template: presentRate
       }, 
       {
         title: 'Display Rate', value: 'displayRate',
-        template: function(val, row) {
-          return String(val) + "%";
-        }
+        template: presentRate
       }
     ]
 
@@ -65,3 +52,7 @@ module.exports = createReactClass({
     );
   }
 })
+
+function presentRate(value) {
+  return parseFloat(value).toFixed(1) + "%";
+}
