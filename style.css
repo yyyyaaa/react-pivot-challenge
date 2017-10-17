@@ -1,3 +1,11 @@
 body {
   font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
 }
+
+.reactPivot-results td[title^='Impressions'],
+.reactPivot-results td[title^='Loads'],
+.reactPivot-results td[title^='Displays'],
+.reactPivot-results td[title^='Load Rate'],
+.reactPivot-results td[title^='Display Rate'] {
+  text-align: right;
+}
