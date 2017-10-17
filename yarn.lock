@@ -4081,7 +4081,7 @@ wide-align@^1.1.0:
   dependencies:
     string-width "^1.0.2"
 
-wildemitter@^1.0.1:
+wildemitter@^1.0.1, wildemitter@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/wildemitter/-/wildemitter-1.2.0.tgz#29dd3a72d699c3e279dd021c3cd2150b82c9a211"
 

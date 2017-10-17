@@ -18,7 +18,8 @@
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-pivot": "^3.0.0",
-    "sheetify": "^6.1.0"
+    "sheetify": "^6.1.0",
+    "wildemitter": "^1.2.0"
   },
   "devDependencies": {
     "budo": "^10.0.4",
