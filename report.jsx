@@ -41,8 +41,8 @@ var calculations = [
   }
 ]
 
-var persisted = JSON.parse(localStorage.rpSelections || '{}')
-var bus = new Emitter
+var persisted = JSON.parse(window.localStorage.rpSelections || '{}')
+var bus = new Emitter()
 
 module.exports = createReactClass({
   render () {
@@ -68,27 +68,27 @@ function presentRate (value) {
   return parseFloat(value).toFixed(1) + '%'
 }
 
-bus.on('activeDimensions', function(activeDimensions) {
+bus.on('activeDimensions', function (activeDimensions) {
   persist('activeDimensions', activeDimensions)
 })
 
-bus.on('sortBy', function(sortBy) {
+bus.on('sortBy', function (sortBy) {
   persist('sortBy', sortBy)
 })
 
-bus.on('sortDir', function(sortDir) {
+bus.on('sortDir', function (sortDir) {
   persist('sortDir', sortDir)
 })
 
-bus.on('hiddenColumns', function(hiddenColumns) {
+bus.on('hiddenColumns', function (hiddenColumns) {
   persist('hiddenColumns', hiddenColumns)
 })
 
-bus.on('solo', function(solo) {
+bus.on('solo', function (solo) {
   persist('solo', solo)
 })
 
 function persist (prop, val) {
   persisted[prop] = val
-  localStorage.rpSelections = JSON.stringify(persisted)
+  window.localStorage.rpSelections = JSON.stringify(persisted)
 }
